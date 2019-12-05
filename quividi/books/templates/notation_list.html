@@ -1,0 +1,14 @@
+{% block content %}
+  <h3>Notation List</h3>
+  {% if notation_list %}
+  <ul>
+    {% for notation in notation_list %}
+      <li>
+        {{ notation.book.title }} ({{ notation.note }}/5) (le: {{ notation.date }}) : {{ notation.description}}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no notation.</p>
+  {% endif %}       
+{% endblock %}

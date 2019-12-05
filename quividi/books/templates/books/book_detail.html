@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+<div>
+    {% block content %}
+    <h2>{{ book.title }}</h2>
+    <p>({{ book.author }}) </p>
+    <p>({{ book.year }})</p>
+    <p>{{ book.summary}}</p>
+
+    <p>Notation: {{ notation.note__avg }}/5</p>
+
+    {% if form %}
+    <form action="{{ book.get_absolute_url }}" method="post">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+    {% endif %}
+
+    {% include 'notation_list.html' with notation_list=notation_list %}
+    {% endblock %}
+</div>

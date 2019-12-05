@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Books notations</h1>
+  <div>
+    <h2>Summary</h2>
+    <ul>
+      <li>Books: {{ num_books }}</li>
+      <li>Authors: {{ num_author }}</li>
+      <li>Notations: {{ num_notations }}</li>
+    </ul>
+    <h2>Last notations from users: </h2>
+    {% include 'notation_list.html' with notation_list=notation_list %}
+    <h2>Quick search</h2>
+    {% if form %}
+    <form action="books/" method="get">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+    {% endif %}
+    {% endblock %}
+  </div>

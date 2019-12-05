@@ -1,0 +1,24 @@
+based on: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/
+
+Django website project for Quividi Test,
+
+Basic website about managing book with a notation system.
+
+You should use first the admin page to add some datas (new author, books and notation)
+
+##### What is DONE #####
+
+- View summary on index
+- Filter book by average notation and author
+- Create new notation within website
+- Basic auth // admin page
+- Basic Pytest
+
+##### What should be improve/add//missing #####
+
+- Basic auth --> add register page
+- New notation --> remove choose of user (we shouldnt trust user)
+- Add book/author within website
+- Admin moderation for news posts ?
+- Filter --> separate author // notation
+- Missing CSS
